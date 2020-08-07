@@ -1,0 +1,32 @@
+.modal {
+    
+    &_wrap {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        overflow-y: hidden;
+        z-index: 99;
+        display: none;
+    }
+
+    &_content {
+        background: #fff;
+        width: 40%;
+        height: 40%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+        border-radius: 5px;
+        position: absolute;
+        top: 30%;
+        left: 30%;
+    }
+
+    &_login {
+        cursor: pointer;
+    }
+}
+    
