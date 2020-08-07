@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GoChannel</title>
+    <title>MywebApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name='viewport' content='width-device-width, initial-scale=1.0'>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
 
   <body>
+    <header class="header">
+      <div class="container clear">
+        <div class="header_items">
+          <div class="header_left">
+            <h2 class="header_title"><%= link_to 'GO_channel', root_path %></h2>
+          </div>
+          <div class="header_right">
+            <ul class="header_list">
+              <%= link_to '投稿する', new_article_path, class: 'header_list_item active' %>
+              <%= link_to '投稿内容一覧', articles_path, class: 'header_list_item active' %>
+              <li class="header_list_item active">チャット</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <% if flash.present? %>
+        <div class="flash">
+          <% flash.each do |key, value|%>
+            <div class="<%= key %>"><%= value %></div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
