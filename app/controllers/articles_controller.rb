@@ -2,7 +2,6 @@ class ArticlesController < ApplicationController
     before_action :set_article, only: [:show, :edit, :update]
 
     def home
-        raise StandardError
     end
 
     def index
