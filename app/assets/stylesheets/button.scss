@@ -1,20 +1,41 @@
-.btn-login {
+@import 'modal';
+
+.btn {
     cursor: pointer;
-    padding: 3px 5px;
+    padding: 6px 5px;
     border: none;
     border-radius: 5px;
     color: white;
     background-color: lightblue;
-    width: 160px;
     text-align: center;
-    position: fixed;
-    left: 44%;
-    margin: auto;
-    bottom: 30px;
-    display: block;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  
+    &_login {
+        width: 160px;
+        position: fixed;
+        left: 44%;
+        margin: auto;
+        bottom: 30px;
+        display: block;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    &_close {
+        color: lightgray;
+        border: 1px solid lightgray;
+        border-radius: 10px;
+        padding: 5px 4px;
+        width: 30%;
+        position: absolute;
+        left: 34%;
+        bottom: 5px;
+    }
+
+    &_close:hover {
+        color: slategray;
+        cursor: pointer;
+    }
 }
 
-.btn-login:hover {
+.btn:hover {
     opacity: 0.9;
 }
