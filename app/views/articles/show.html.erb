@@ -1,5 +1,8 @@
 <div class="container">
   <div class="show">
+    <div class="show_date">
+      <p><%= @article.display_created_at %></p>
+    </div>
     <p class="show_title">タイトル</p>
     <%= @article.title %>
     <p class="show_content">内容</p>
