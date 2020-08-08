@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
     before_action :set_article, only: [:show, :edit, :update]
 
     def home
-
+        raise StandardError
     end
 
     def index
@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
         @article = Article.new
     end
 
-    def create 
+    def create
         @article = Article.new(article_params)
         if @article.save
             redirect_to article_path(@article), notice: '保存しました'
@@ -45,7 +45,7 @@ class ArticlesController < ApplicationController
     end
 
     private
-    def set_article 
+    def set_article
         @article = Article.find(params[:id])
     end
 
