@@ -20,12 +20,28 @@
             <h2 class="header_title"><%= link_to 'GO_channel', root_path %></h2>
           </div>
           <div class="header_right">
-            <ul class="header_list">
-              <%= link_to '投稿する', new_article_path, class: 'header_list_item active' %>
-              <%= link_to '投稿内容一覧', articles_path, class: 'header_list_item active' %>
-              <li class="header_list_item active">チャット</li>
-            </ul>
+              <div id="nav-drawer">
+                <input id="nav-input" type="checkbox" class="nav-unshown">
+                <label id="nav-open" class="nav-open" for="nav-input"><span></span></label>
+                <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+                <div id="nav-content">
+                  <div id="nav-content_head">
+                    <%= image_tag 'default-avatar.png' %>
+                  </div>
+                  <ul id="nav-content_list">
+                    <li id="nav-content_list_item"><%= link_to '投稿する', new_article_path %></li>
+                    <li id="nav-content_list_item"><%= link_to '投稿内容一覧', articles_path %></li>
+                  </ul>
+                </div>
+              </div>
           </div>
+        </div>
+        <div>
+          <%= image_tag 'default-avatar.png', class: 'header_image' %>
+          <ul class="header_list">
+            <li class="header_list_item"><%= link_to '投稿する', new_article_path %></li>
+            <li class="header_list_item"><%= link_to '投稿内容一覧', articles_path %></li>
+          </ul>
         </div>
       </div>
     </header>

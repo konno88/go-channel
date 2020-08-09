@@ -10,22 +10,56 @@
     margin-bottom: 20px;
 
     &_left {
-        float: left;
+        position: absolute;
+        top: 22.25px;
+    }
+
+    &_right {
+        display: flex;
     }
 
     &_list {
-        &_item {
-        color: $text-base-color;
-        float: right;
-        margin-left: 20px;
-        list-style: none;
-        padding-top: 23px;
-        text-decoration: none;
-        }
+        display: none;
+    }
+
+    &_image {
+        display: none;
     }
 }
 
 .active:hover {
   opacity: 0.8;
   cursor: pointer;
+}
+
+@media screen and (min-width: 2560px) {
+    .header {
+        height: 200px;
+
+        &_left {
+            font-size: 30px;
+            top: 41.25px;
+        }
+
+        &_list {
+            display: block;
+            position: absolute;
+            top: 65px;
+            right: 5%;
+
+            &_item {
+                float: left;
+                list-style: none;
+                font-size: 30px;
+                margin-left: 40px;
+            }
+        }
+
+        &_image {
+            display: block;
+            position: absolute;
+            top: 54px;
+            left:600px
+        }
+    }
 }
