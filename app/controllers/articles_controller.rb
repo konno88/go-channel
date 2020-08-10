@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-    before_action :set_article, only: [:show, :edit, :update]
+    before_action :set_article, only: [:show]
     before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
     def home
@@ -13,11 +13,11 @@ class ArticlesController < ApplicationController
     end
 
     def new
-        @article = Article.new
+        @article = current_user.articles.build
     end
 
     def create
-        @article = Article.new(article_params)
+        @article = current_user.articles.build(article_params)
         if @article.save
             redirect_to article_path(@article), notice: '保存しました'
         else
@@ -27,9 +27,11 @@ class ArticlesController < ApplicationController
     end
 
     def edit
+        @article = current_user.articles.find(params[:id])
     end
 
     def update
+        @article = current_user.articles.find(params[:id])
         if @article.update(article_params)
             redirect_to article_path(@article), notice: '更新しました'
         else
@@ -39,7 +41,7 @@ class ArticlesController < ApplicationController
     end
 
     def destroy
-        article = Article.find(params[:id])
+        article = current_user.articles.find(params[:id])
         article.destroy!
         redirect_to articles_path, notice: '削除しました'
     end
@@ -52,4 +54,6 @@ class ArticlesController < ApplicationController
     def article_params
         params.require(:article).permit(:title, :content)
     end
+
+    
 end

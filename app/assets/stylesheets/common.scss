@@ -6,7 +6,7 @@ border: none;
 
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: block;
 }
 
 .dropdown-content {
@@ -25,7 +25,8 @@ border: none;
 }
 
 .dropdown-content a {
-  padding: 8px 16px;
+  padding: 2px;
+  text-align: center;
   text-decoration: none;
   display: block;
   color: $text-base-color;

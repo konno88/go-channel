@@ -1,6 +1,6 @@
 @import 'variables';
 
-.account-create {
+.account-create, .signin, .cg-pwd {
     color: $text-base-color;
 }
 
@@ -12,11 +12,15 @@
     margin-bottom: 20px;
 }
 
-.signup {
+.signup, .login, .cg-pwd-btn {
     margin-bottom: 20px;
     padding: 5px 8px;
     border: none;
     border-radius: 5px;
     color: white;
     background-color: #008080;
+}
+
+.login {
+    margin-top: 20px;
 }
