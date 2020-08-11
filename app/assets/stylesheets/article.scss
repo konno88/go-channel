@@ -1,3 +1,5 @@
+@import 'variables';
+
 .show {
     background-color: rgba(255, 255, 255, 0.6);
     min-height: 100vh;
@@ -20,9 +22,25 @@
         padding-top: 20px;
         margin-top: 20px;
     }
+    
+    &_detail {
+        position: relative;
+        margin-top: 40px;
 
-    &_heart {
-        margin-top: 30px;
+        &_content {
+            display: flex;
+            position: absolute;
+            right: 0;
+        }
+
+        &_name {
+            color: $text-base-color;
+        }
+
+        &_heart {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
     }
 }
 

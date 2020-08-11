@@ -1,7 +1,9 @@
 @import './variables';
 
 .dropbtn {
-border: none;
+  border: none;
+  position: absolute;
+  right: 0;
 }
 
 .dropdown {
@@ -33,7 +35,7 @@ border: none;
 }
 
 .dropdown-content a:hover {
-  background-color: white;
+  opacity: 0.8;
 }
 
 .dropdown:hover .dropdown-content {
