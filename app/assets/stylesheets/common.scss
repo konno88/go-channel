@@ -1,12 +1,14 @@
 @import './variables';
 
 .dropbtn {
-border: none;
+  border: none;
+  position: absolute;
+  right: 0;
 }
 
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: block;
 }
 
 .dropdown-content {
@@ -25,14 +27,15 @@ border: none;
 }
 
 .dropdown-content a {
-  padding: 8px 16px;
+  padding: 2px;
+  text-align: center;
   text-decoration: none;
   display: block;
   color: $text-base-color;
 }
 
 .dropdown-content a:hover {
-  background-color: white;
+  opacity: 0.8;
 }
 
 .dropdown:hover .dropdown-content {

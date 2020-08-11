@@ -3,12 +3,28 @@
     <div class="show_date">
       <p><%= @article.display_created_at %></p>
     </div>
+    <% if user_signed_in? && current_user.has_written?(@article) %>
+      <div class="article_detail_actions">
+        <div class="dropdown">
+          <%= image_tag 'actions.svg', class: 'dropbtn' %>
+          <div class="dropdown-content mini">
+            <%= link_to '編集する', edit_article_path(@article) %>
+            <%= link_to '削除する', article_path(@article), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'} %>
+          </div>
+        </div>
+      </div>
+    <% end %>
     <p class="show_title">タイトル</p>
     <%= @article.title %>
     <p class="show_content">内容</p>
     <%= @article.content %>
-    <div class="show_heart">
-      <%= image_tag 'heart.svg'%>
+    <div class="show_detail">
+      <div class="show_detail_content">
+        <p class="show_detail_name"><%= @article.author_name %>さんの記事</p>
+        <div class="show_detail_heart">
+          <%= image_tag 'heart.svg'%>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -14,17 +14,8 @@
       <div class="card_detail">
         <%= image_tag 'default-avatar.png' %>
         <div>
-          <p>cohki0305</p>
+          <p><%= article.author_name %></p>
           <p><%= article.display_created_at %></p>
-        </div>
-        <div class="article_detail_actions">
-          <div class="dropdown">
-            <%= image_tag 'actions.svg', class: 'dropbtn' %>
-            <div class="dropdown-content mini">
-              <%= link_to '編集する', edit_article_path(id: article.id) %>
-              <%= link_to '削除する', article_path(id: article.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'} %>
-            </div>
-          </div>
         </div>
       </div>
     </div>
