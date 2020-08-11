@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MywebApp</title>
+    <title>Go_channel</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
@@ -29,6 +29,7 @@
                     <%= image_tag 'default-avatar.png' %>
                   </div>
                   <ul id="nav-content_list">
+                    <li id="nav-content_list_item"><%= link_to 'HOMEに戻る', root_path %></li>
                     <li id="nav-content_list_item"><%= link_to '投稿する', new_article_path %></li>
                     <li id="nav-content_list_item"><%= link_to '投稿内容一覧', articles_path %></li>
                   </ul>

@@ -32,13 +32,25 @@
     }
 
     .btn_close {
-        color: lightgray;
+        margin-top: 10px;
         position: absolute;
-        top: 45px;
-        right: 10px;
+        right: 15px;
+        color: silver;
+    }
+
+    .btn_close-comment {
+        margin-top: 0px;
+        position: absolute;
+        right: 0px;
+        color: silver;
     }
 
     .btn_close:hover {
+        color: slategray;
+        cursor: pointer;
+    }
+
+    .btn_close-comment:hover {
         color: slategray;
         cursor: pointer;
     }
