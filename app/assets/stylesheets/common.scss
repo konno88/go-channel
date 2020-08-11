@@ -2,8 +2,6 @@
 
 .dropbtn {
   border: none;
-  position: absolute;
-  right: 0;
 }
 
 .dropbtn-comments {
@@ -20,7 +18,8 @@
 .dropdown-content {
   font-weight: normal;
   display: none;
-  right: 0;
+  left: 30px;
+  top: 0;
   position: absolute;
   background-color: white;
   min-width: 160px;
