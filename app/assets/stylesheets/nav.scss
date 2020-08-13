@@ -70,6 +70,12 @@
         background-color: skyblue;
     }
 
+    &_head img {
+      width: 108px;
+      height: 108px;
+      border-radius: 100%;
+    }
+
     &_list {
         
         &_item {

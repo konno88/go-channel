@@ -7,6 +7,12 @@
   <%= form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f| %>
   <div class="form">
     <div>
+      <%= f.label :avatar, 'アイコン', class: 'form_icon' %>
+    </div>
+    <div>
+      <%= f.file_field :avatar, class: 'form_icon_field' %>
+    </div>
+    <div>
         <%= f.label :nickname, 'ハンドルネーム', class: 'form_name' %>
     </div>
     <div>
@@ -22,7 +28,13 @@
       <%= f.label :gender, '性別', class: 'form_gender' %>
     </div>
     <div>
-      <%= f.select :gender, Profile.genders.keys, {}, {class: 'form_gender_text'} %>
+      <%= f.select :gender, Profile.genders.map {|k, v| [I18n.t("enum.genders.#{k}"), k]}, {}, {class: 'form_gender_text'} %>
+    </div>
+    <div>
+      <%= f.label :location, '今住んでいる県', class: 'form_location' %>
+    </div>
+    <div>
+      <%= f.select :location, Profile.locations.keys, {prompt: '選択してください'}, {class: 'form_location_text'} %>
     </div>
     <div>
       <%= f.label :birthday, '生年月日', class: 'form_birthday' %>

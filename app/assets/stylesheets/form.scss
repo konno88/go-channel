@@ -76,8 +76,20 @@
         display: block;
 
         &_text {
-            padding-top: 3px;
-            padding-bottom: 3px;
+            padding-top: 2px;
+            padding-bottom: 5px;
+            margin-bottom: 7px;
+            border: none;
+        }
+    }
+
+    &_location {
+        margin-bottom: 7px;
+        display: block;
+
+        &_text {
+            padding-top: 2px;
+            padding-bottom: 5px;
             margin-bottom: 7px;
             border: none;
         }
@@ -89,6 +101,16 @@
 
         &_text {
             border: none;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            margin-bottom: 7px;
+        }
+    }
+
+    &_icon {
+        margin-bottom: 7px;
+
+        &_field {
             padding-top: 3px;
             padding-bottom: 3px;
             margin-bottom: 7px;

@@ -26,7 +26,7 @@
                 <label class="nav-unshown" id="nav-close" for="nav-input"></label>
                 <div id="nav-content">
                   <div id="nav-content_head">
-                    <%= image_tag 'default-avatar.png' %>
+                    <%= image_tag current_user.avatar_image %>
                   </div>
                   <ul id="nav-content_list">
                     <li id="nav-content_list_item"><%= link_to 'HOMEに戻る', root_path %></li>
@@ -39,8 +39,9 @@
           </div>
         </div>
         <div>
-          <%= image_tag 'default-avatar.png', class: 'header_image' %>
           <ul class="header_list">
+            <li class="header_list_item"><%= link_to 'HOMEに戻る', root_path %></li>
+            <li class="header_list_item"><%= link_to 'プロフィール', profile_path %></li>
             <li class="header_list_item"><%= link_to '投稿する', new_article_path %></li>
             <li class="header_list_item"><%= link_to '投稿内容一覧', articles_path %></li>
           </ul>
