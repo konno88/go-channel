@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="profilePage_user">
+    <div class="profilePage_user_title">
+      プロフィール
+    </div>
+    <div class="profilePage_user_actionButton">
+          <%= link_to '変更', edit_profile_path %>
+    </div>
+    <div class="profilePage_user_image">
+        <%= image_tag current_user.avatar_image %>
+    </div>
+    <div class="profilePage_user_basicInfo">
+      <div class="profilePage_user_name">
+        <div class="profilePage_user_displayName">
+          <%= current_user.display_name %>/<%= current_user.age %>/<%= I18n.t("enum.genders.#{current_user.gender}") %>
+        </div>
+        <div class="profilePage_user_birthday">
+          <%= current_user.birthday %>
+        </div>
+        <div class="profilePage_user_location">
+          <%= current_user.location %>在住
+        </div>
+      </div>
+      <div class="profilePage_user_introduction">
+        <%= current_user.profile&.introduction %>
+      </div>
+    </div>
+    <% current_user.articles.each do |article| %>
+      <%= render 'commons/article', article: article %>
+    <% end %>
+  </div>
+</div>
