@@ -18,28 +18,47 @@
     <%= @article.title %>
     <p class="show_content">内容</p>
     <%= @article.content %>
+    <% if @article.eyecatch.attached? %>
+      <div class="show_image">
+        <%= image_tag @article.eyecatch %>
+      </div>
+    <% end %>
     <div class="show_detail">
       <div class="show_detail_content">
         <p class="show_detail_name"><%= @article.author_name %>さんの記事</p>
-        <div class="show_detail_heart">
-          <%= image_tag 'heart.svg'%>
-        </div>
+        <% if user_signed_in? %>
+          <% if current_user.has_liked?(@article) %>
+            <div class="show_detail_heart">
+              <%= link_to article_like_path(@article), data: {method: 'delete'} do %>
+                <%= image_tag 'heart-active.svg' %>
+              <% end %>
+            </div>
+          <% else %>
+            <div class="show_detail_heart">
+              <%= link_to article_like_path(@article), data: {method: 'post'} do %>
+                <%= image_tag 'heart.svg'%>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <div class="show-comment-content">
-      <div class="show_comment">
-        <%= link_to new_article_comment_path(@article) do %>
-          <p class="show_comment_view">コメントする<span class="fa fa-comment"></span></p>
-        <% end %>
-      </div>
-    <div class="show_comments">
-      <div class="dropdown">
-        <p class="show_comments_view dropbtn-comments">コメント一覧<span class="fa fa-list-ol"></span></p>
-        <div class="dropdown-content-comments mini">
-          <p class="show_comments_open">開く</p>
+      <div class="show-comment-wrap">
+        <div class="show_comment">
+          <%= link_to new_article_comment_path(@article) do %>
+            <p class="show_comment_view">コメントする<span class="fa fa-comment"></span></p>
+          <% end %>
+        </div>
+        <div class="show_comments">
+          <div class="dropdown">
+            <p class="show_comments_view dropbtn-comments">コメント一覧<span class="fa fa-list-ol"></span></p>
+            <div class="dropdown-content-comments mini">
+              <p class="show_comments_open">開く</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
     </div>
     <div class="show_comments_index">
       <div class="btn_close-comment">
