@@ -117,6 +117,16 @@
         }
     }
 
+    &_eyecatch {
+        margin-bottom: 7px;
+
+        &_field {
+            padding-top: 3px;
+            padding-bottom: 3px;
+            margin-bottom: 7px;
+        }
+    }
+
     .submit_btn {
         color: #fff;
         border: none;
@@ -129,5 +139,53 @@
     .submit_btn:hover {
         cursor: pointer;
         opacity: 0.9;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .form {
+        font-size: 30px;
+
+        &_eyecatch {
+
+            &_field {
+                font-size: 30px;
+            }
+        }
+
+        &_icon {
+
+            &_field {
+                font-size: 30px;
+            }
+        }
+
+        &_gender {
+            
+            &_text {
+                font-size: 30px;
+                padding-bottom: 12px;
+            }
+        }
+
+        &_location {
+
+            &_text {
+                font-size: 30px;
+            }
+        }
+
+        &_birthday {
+
+            &_text {
+                font-size: 30px;
+                padding-bottom: 12px;
+            }
+        }
+    }
+
+    .submit_btn {
+        padding: 20px 0;
+        font-size: 33px;
     }
 }

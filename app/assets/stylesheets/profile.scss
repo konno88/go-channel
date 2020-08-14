@@ -78,3 +78,18 @@
         }
     }
 }
+
+@media screen and (min-width: 2560px) {
+    .profilePage_user {
+        font-size: 30px;
+
+        &_image {
+            padding-top: 40px;
+        }
+
+        &_image img {
+            width: 250px;
+            height: 250px;
+        }
+    }
+}
