@@ -26,7 +26,11 @@
                 <label class="nav-unshown" id="nav-close" for="nav-input"></label>
                 <div id="nav-content">
                   <div id="nav-content_head">
-                    <%= image_tag current_user.avatar_image %>
+                    <% if user_signed_in? && current_user&.profile&.avatar&.attached? %>
+                      <%= image_tag current_user.profile.avatar %>
+                    <% else %>
+                      <%= image_tag 'default-avatar.png' %>
+                    <% end %>
                   </div>
                   <ul id="nav-content_list">
                     <li id="nav-content_list_item"><%= link_to 'HOMEに戻る', root_path %></li>

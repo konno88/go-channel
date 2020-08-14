@@ -4,7 +4,7 @@
         <li><%= message %></li>
     <% end %>
   </ul>
-  <%= form_with(model: @article, local: true) do |f| %>
+  <%= form_with(model: article, local: true) do |f| %>
     <div class="form">
         <div>
           <%= f.label :eyecatch, 'アイキャッチ', class: 'form_eyecatch' %>
@@ -13,18 +13,18 @@
           <%= f.file_field :eyecatch, class: 'form_eyecatch_field' %>
         </div>
         <div>
-        <%= f.label :title, 'タイトル', class: 'form_title' %>
+          <%= f.label :title, 'タイトル', class: 'form_title' %>
         </div>
         <div>
-        <%= f.text_field :title, class: 'form_title_text' %>
+          <%= f.text_field :title, class: 'form_title_text' %>
         </div>
         <div>
-        <%= f.label :content, '内容', class: 'form_content' %>
+          <%= f.label :content, '内容', class: 'form_content' %>
         </div>
         <div>
-        <%= f.text_area :content, class: 'form_content_text' %>
+          <%= f.rich_text_area :content, class: 'form_content_text' %>
         </div>
-        <%= f.submit '保存', class: 'submit_btn' %>
+        <%= f.submit '保存', class: 'btn-primary' %>
     </div>
   <% end %>
 </div>
