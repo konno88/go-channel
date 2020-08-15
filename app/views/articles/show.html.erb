@@ -25,7 +25,11 @@
     <% end %>
     <div class="show_detail">
       <div class="show_detail_content">
-        <p class="show_detail_name"><%= @article.author_name %>さんの記事</p>
+        <div class="show_detail_name">
+          <%= link_to account_path(@article.user) do %>
+            <%= image_tag @article.user.avatar_image %>
+          <% end %>
+        </div>
         <% if user_signed_in? %>
           <% if current_user.has_liked?(@article) %>
             <div class="show_detail_heart">
