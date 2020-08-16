@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="profilePage_user">
+    <div class="profilePage_user_title">
+      プロフィール
+    </div>
+    <div class="profilePage_user_actionButton">
+      <% if current_user == user %>
+        <%= link_to '変更', edit_profile_path %>
+      <% else %>
+        <% if current_user&.has_followed?(user) %>
+          <p class="profilePage_user_actionButton_unfollow"><%= link_to 'フォロー中', account_unfollows_path(user), data: {method: 'post'} %></p>
+        <% else %>
+          <p class="profilePage_user_actionButton_follow"><%= link_to 'フォローする', account_follows_path(user), data: {method: 'post'} %></p>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="profilePage_user_image">
+        <%= image_tag user.avatar_image %>
+    </div>
+    <div class="profilePage_user_basicInfo">
+      <div class="profilePage_user_name">
+        <div class="profilePage_user_displayName">
+          <%= user.display_name %>/<%= user.age || '？歳' %>/<%= I18n.t("enum.genders.#{user.gender || 'unknown'}") %>
+        </div>
+        <div class="profilePage_user_birthday">
+          <%= user.birthday || '未入力' %>
+        </div>
+        <div class="profilePage_user_location">
+          <%= user.location || '未入力' %>
+        </div>
+      </div>
+      <div class="profilePage_user_introduction">
+        <%= user.profile&.introduction || '未入力' %>
+      </div>
+    </div>
+    <% user.articles.each do |article| %>
+      <%= render 'commons/article', article: article %>
+    <% end %>
+  </div>
+</div>
