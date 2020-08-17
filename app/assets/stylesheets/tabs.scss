@@ -6,16 +6,24 @@
   justify-content: space-around;
   width: 50%;
 
-  &_item {
+  &_item  {
     padding: 16px 0px;
-    background-color: #fff;
+    background-color: #55acee;
     width: 100%;
     text-align: center;
     cursor: pointer;
 
+    a {
+      display: block;
+      color: white;
+    }
+
     &.active {
       background-color: #008080;
-      color: white;
+
+      a {
+        color: white;
+      }
     }
 
     &:hover {

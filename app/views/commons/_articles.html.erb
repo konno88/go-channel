@@ -1,0 +1,6 @@
+<div class="container">
+  <%= render 'commons/tabs' %>
+  <% articles.each do |article| %>
+    <%= render 'commons/article', article: article %>
+  <% end %>
+</div>
