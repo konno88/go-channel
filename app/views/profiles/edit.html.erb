@@ -37,6 +37,12 @@
       <%= f.select :location, Profile.locations.keys, {prompt: '選択してください'}, {class: 'form_location_text'} %>
     </div>
     <div>
+      <%= f.label :musical_instrument, '得意な楽器', class: 'form_musical-instrument' %>
+    </div>
+    <div>
+      <%= f.select :musical_instrument, Profile.musical_instruments.keys, {prompt: '選択してください'}, {class: 'form_musical-instrument_text'} %>
+    </div>
+    <div>
       <%= f.label :birthday, '生年月日', class: 'form_birthday' %>
     </div>
     <div>

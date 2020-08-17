@@ -99,6 +99,18 @@
         }
     }
 
+    &_musical-instrument {
+        margin-bottom: 7px;
+        display: block;
+
+        &_text {
+            padding-top: 2px;
+            padding-bottom: 5px;
+            margin-bottom: 7px;
+            border: none;
+        }
+    }
+
     &_birthday {
         margin-bottom: 7px;
         display: block;

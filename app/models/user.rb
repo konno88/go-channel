@@ -31,7 +31,7 @@ class User < ApplicationRecord
   has_many :followers, through: :follower_relationships, source: :follower
   has_one :profile, dependent: :destroy
 
-  delegate :birthday, :age, :gender, :location, to: :profile, allow_nil: true
+  delegate :birthday, :age, :gender, :location, :musical_instrument, to: :profile, allow_nil: true
 
   def display_name
     profile&.nickname || self.email.split('@').first

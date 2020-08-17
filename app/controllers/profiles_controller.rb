@@ -27,6 +27,7 @@ class ProfilesController < ApplicationController
             :introduction,
             :gender,
             :location,
+            :musical_instrument,
             :birthday,
             :subscribed,
             :avatar

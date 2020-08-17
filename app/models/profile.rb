@@ -2,16 +2,17 @@
 #
 # Table name: profiles
 #
-#  id           :integer          not null, primary key
-#  birthday     :date
-#  gender       :integer
-#  introduction :text
-#  location     :integer
-#  nickname     :string
-#  subscribed   :boolean          default(FALSE)
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  user_id      :integer          not null
+#  id                 :integer          not null, primary key
+#  birthday           :date
+#  gender             :integer
+#  introduction       :text
+#  location           :integer
+#  musical_instrument :integer
+#  nickname           :string
+#  subscribed         :boolean          default(FALSE)
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  user_id            :integer          not null
 #
 # Indexes
 #
@@ -35,6 +36,10 @@ class Profile < ApplicationRecord
         徳島県:36,香川県:37,愛媛県:38,高知県:39,
         福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47
       }
+
+    enum musical_instrument: {
+        ボーカル:1,ボーカル兼ギター:2,ギター:3,ベース:4,キーボード:5,ドラム:6
+    }
 
     def age 
         return '不明' unless birthday.present?

@@ -5,7 +5,7 @@
     </div>
     <div class="profilePage_user_actionButton">
       <% if current_user == user %>
-        <%= link_to '変更', edit_profile_path %>
+        <p class="profilePage_user_actionButton_edit"><%= link_to '変更', edit_profile_path %></p>
       <% else %>
         <% if current_user&.has_followed?(user) %>
           <p class="profilePage_user_actionButton_unfollow"><%= link_to 'フォロー中', account_unfollows_path(user), data: {method: 'post'} %></p>
@@ -27,6 +27,9 @@
         </div>
         <div class="profilePage_user_location">
           <%= user.location || '未入力' %>
+        </div>
+        <div class="profilePage_user_musical-instrument">
+          <%= user.musical_instrument || '未入力' %>
         </div>
       </div>
       <div class="profilePage_user_introduction">
