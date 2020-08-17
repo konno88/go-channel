@@ -1,4 +1,4 @@
-
+@import 'variables';
   
   #nav-drawer {
       position: absolute;
@@ -83,6 +83,13 @@
             padding-top: 5px;
             padding-bottom: 5px;
             margin-left: 0;
+            color: $text-base-color;
+            list-style: none;
+        }
+
+        &_search {
+          padding-top: 10px;
+          line-height: 31px;
         }
     }
     
@@ -98,6 +105,23 @@
     -webkit-transform: translateX(0%);
     transform: translateX(0%);/*中身を表示（右へスライド）*/
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+
+  .search {
+    border: none;
+    margin-top: 5px;
+    padding-bottom: 4px;
+    line-height: 17px;
+  }
+  
+
+  .btn-search {
+    background-color: skyblue;
+    color: white;
+    border: 1px solid white;
+    border-radius: 100%;
+    padding: 7px 5px;
+    font-weight: bold;
   }
 
   @media screen and (min-width: 2560px) {

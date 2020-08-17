@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resource :followers, only: [:show]
 
+  resources :searches, only: [:show, :index]
+
   resources :articles do
     resources :comments, only: [:new, :create]
 
