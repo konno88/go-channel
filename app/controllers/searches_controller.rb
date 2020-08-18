@@ -1,5 +1,6 @@
 class SearchesController < ApplicationController 
-    def show
-        
+
+    def index
+        @users = User.all
     end
 end
