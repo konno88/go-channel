@@ -2,7 +2,7 @@
   <div class="followings">
     <div class="followings_index">
       <% users.each do |user| %>
-        <%= link_to account_path(user) do %>
+      <%= link_to account_path(user) do %>
         <div class="followings_index_user">
           <div class="followings_index_user_image">
             <%= image_tag user.avatar_image %>
@@ -16,7 +16,7 @@
             </div>
           </div>
         </div>
-        <% end %>
+      <% end %>
       <% end %>
     </div>
   </div>

@@ -1,3 +1,5 @@
+@import 'variables';
+
 .profilePage_user {
     padding: 10px;
     background-color: rgba(#008080, 0.6);
@@ -113,7 +115,27 @@
         padding-bottom: 5px;
     }
 
-    &_introduction {
+    &_follow {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 5px;
+    }
+
+    &_follow a {
+        color: black;
+    }
+
+    &_follower  {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 5px;
+    }
+
+    &_follower a {
+        color: black;
+    }
+
+    &_introduction  {
         margin-bottom: 15px;
         border-bottom: 1px solid #fff;
         padding-bottom: 5px;
@@ -122,7 +144,7 @@
 
 @media screen and (max-width: 425px) {
     .profilePage_user {
-        &_displayName, &_birthday, &_introduction, &_location {
+        &_displayName, &_birthday, &_introduction, &_location, &_musical-instrument, &_follow , &_follower {
             font-size: 14px;
         }
     }

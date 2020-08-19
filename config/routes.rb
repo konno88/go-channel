@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   resource :followings, only: [:show]
 
+  resources :user_followings, only: [:index, :show]
+
   resource :followers, only: [:show]
+
+  resources :user_followers, only: [:index, :show]
 
   resources :searches, only: [:index]
 
