@@ -30,6 +30,7 @@ class User < ApplicationRecord
   has_many :follower_relationships, foreign_key: 'following_id', class_name: 'Relationship', dependent: :destroy
   has_many :followers, through: :follower_relationships, source: :follower
   has_one :profile, dependent: :destroy
+  has_many :search, dependent: :destroy
 
   delegate :birthday, :age, :gender, :location, :musical_instrument, to: :profile, allow_nil: true
 

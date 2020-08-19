@@ -107,6 +107,10 @@
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   }
 
+  .searching {
+    margin-bottom: 30px;
+  }
+
   .search {
     border: none;
     margin-top: 5px;
@@ -119,14 +123,29 @@
     background-color: skyblue;
     color: white;
     border: 1px solid white;
-    border-radius: 100%;
+    border-radius: 20px;
     padding: 7px 5px;
+    margin-left: 10px;
     font-weight: bold;
+  }
+
+  .btn-search:hover {
+    cursor: pointer;
+    opacity: 0.8;
   }
 
   @media screen and (min-width: 2560px) {
     #nav-drawer {
         display: none;
+    }
+
+    .btn-search {
+      width: 180px;
+      height: 70px;
+      font-size: 30px;
+      padding: 11px 7px;
+      margin-left: 10px;
+      font-weight: bold;
     }
 }
 
