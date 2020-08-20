@@ -10,7 +10,6 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("modal")
 
 
 
@@ -20,4 +19,28 @@ require("modal")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import $ from 'jquery'
+import axios from 'axios'
+
+document.addEventListener('turbolinks:load', () => {
+
+    $('.btn_login').on('click', () => {
+        $('.modal_wrap').fadeIn()
+    })
+   
+    $('.btn_close').on('click', () => {
+        $('.modal_wrap').fadeOut()
+    })
+   
+    $('.show_comments_open').on('click', () => {
+        $('.show_comments_index').slideDown(400, function() {
+            $('.show_comments_open').fadeOut();
+        });
+    })
+   
+    $('.btn_close-comment').on('click', () => {
+        $('.show_comments_index').fadeOut();
+    })
+})
 
