@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'articles#home'
 
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
   resource :timeline, only: [:show]
 
   resource :followings, only: [:show]
@@ -18,7 +22,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, only: [:new, :create]
 
-    resource :like, only: [:create, :destroy]
+    resource :like, only: [:show, :create, :destroy]
   end
 
   resources :accounts, only: [:show] do

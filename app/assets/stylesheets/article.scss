@@ -29,25 +29,28 @@
         margin-top: 40px;
 
         &_content {
-            display: flex;
             position: absolute;
             right: 0;
-        }
+        
 
-        &_name {
-            
-        }
+            &_name {
+                display: flex;
+            }
 
-        &_name img {
-            width: 50px;
-            height: 50px;
-            border-radius: 100%;
-        }
+            &_name img {
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+            }
 
-        &_heart {
-            margin-top: 10px;
-            margin-left: 20px;
-        }
+            &_heart img {
+                width: 40px;
+                height: 40px;
+                margin-top: 5px;
+                margin-left: 15px;
+                border-radius: 0;
+            }
+       }
     }
 
     &_comment {
@@ -65,7 +68,7 @@
     }
 
     &_comments {
-        display: inline-block;
+        height: 24px;
         &_view {
             color: $text-base-color;
         }
@@ -128,6 +131,14 @@
         max-width: 137px;
         margin-left: auto;
         margin-right: 0;
+    }
+
+    .show_comments_view {
+        display: flex;
+    }
+
+    .show_comments_view span {
+        padding-top: 4px;
     }
 }
 
