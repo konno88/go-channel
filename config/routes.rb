@@ -19,6 +19,10 @@ Rails.application.routes.draw do
 
   resources :searches, only: [:index]
 
+  resources :messages, only: [:create]
+
+  resources :rooms, only: [:create, :show]
+
   resources :articles do
     resources :comments, only: [:new, :create]
 

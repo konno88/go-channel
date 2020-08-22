@@ -31,6 +31,8 @@ class User < ApplicationRecord
   has_many :followers, through: :follower_relationships, source: :follower
   has_one :profile, dependent: :destroy
   has_many :search, dependent: :destroy
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
 
   delegate :birthday, :age, :gender, :location, :musical_instrument, to: :profile, allow_nil: true
 
