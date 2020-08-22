@@ -12,7 +12,7 @@ const handleHeartDisplay = (hasLiked) => {
     }
 }
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     
     const dataset = $('#show-article').data()
     const articleId = dataset.articleId

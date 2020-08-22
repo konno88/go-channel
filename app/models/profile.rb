@@ -22,7 +22,8 @@ class Profile < ApplicationRecord
     belongs_to :user
     has_one_attached :avatar
 
-    validates :nickname, length: {minimum: 2, maximum: 10}
+    validates :nickname, length: {minimum: 2, maximum: 12}
+    validates :introduction, length: {minimum: 2, maximum: 120}
 
     enum gender: {male: 0, female: 1, other: 2}
 
