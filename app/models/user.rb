@@ -5,9 +5,13 @@
 #  id                     :integer          not null, primary key
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  name                   :string
+#  provider               :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  token                  :string
+#  uid                    :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -20,7 +24,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: [:google_oauth2]
 
   has_many :articles, dependent: :destroy
   has_many :likes, dependent: :destroy
@@ -82,5 +87,20 @@ class User < ApplicationRecord
     else
       user
     end
+  end
+
+  protected
+  def self.from_omniauth(access_token)
+    data = access_token.info
+    user = User.where(email: data['email']).first
+
+    unless user
+      user = User.create(
+        name: data['name'],
+        email: data['email'],
+        password: Devise.friendly_token[0,20]
+      )
+    end
+    user
   end
 end

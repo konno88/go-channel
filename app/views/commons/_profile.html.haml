@@ -4,6 +4,8 @@
       プロフィール
     .profilePage_user_actionButton
       - if current_user == user
+        =link_to new_article_path do
+          %span.fa.fa-pen.profilePage_user_actionButton_new
         %p.profilePage_user_actionButton_edit= link_to '変更', edit_profile_path
       - else
         - if current_user&.has_followed?(user)
