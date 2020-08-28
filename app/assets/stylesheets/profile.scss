@@ -22,6 +22,7 @@
         position: absolute;
         right: 0;
         margin-right: 10px;
+        display: flex;
 
 
         &_unfollow {
@@ -75,6 +76,16 @@
                 margin-bottom: 0;
                 margin-right: 0;
                 background-color: #008000;
+            }
+        }
+
+        a {
+            color: white;
+
+            span {
+                display: block;
+                line-height: 56px;
+                margin-right: 10px;
             }
         }
     }
@@ -161,6 +172,14 @@
         &_image img {
             width: 250px;
             height: 250px;
+        }
+
+        &_actionButton {
+            a {
+                span {
+                    line-height: 105px;
+                }
+            }
         }
     }
 }

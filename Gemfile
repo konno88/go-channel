@@ -28,6 +28,7 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem 'devise'
 gem 'dotenv-rails'
+# Google login
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 # Use Active Storage variant
